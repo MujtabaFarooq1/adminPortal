@@ -1,0 +1,70 @@
+.profile__header {
+  padding: 1rem 2rem;
+  background-color: var(--color-primary-dark-1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  width: 100vw;
+
+  &__profileImage {
+    height: 4rem;
+    border-radius: 50%;
+  }
+}
+
+.vertical__nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  padding: 2rem;
+  padding-top: 9rem;
+  min-height: 100vh;
+  width: 20vw;
+  min-width: 8rem;
+  background-color: var(--color-back-primary);
+
+  &__list {
+    list-style: none;
+
+    &__item,
+    &__dropdownItem {
+      color: var(--color-grey-light-1);
+      font-size: 1.6rem;
+      text-transform: uppercase;
+      cursor: pointer;
+      &__open i {
+        transform: rotate(-90deg);
+      }
+
+      & i {
+        transition: all 0.5s;
+        margin-left: 1rem;
+      }
+
+      &__wrapper {
+        display: none;
+        list-style: none;
+        padding: 0.5rem 1rem;
+        margin-left: 1rem;
+        // background: var(--color-primary-dark-2);
+
+        &__item {
+          font-size: 1.5rem;
+          padding: 0.5rem 0;
+          transition: padding 0.3s, background-color 0.3s;
+          &:hover {
+            padding-left: 1rem;
+          }
+          &:not(:last-child) {
+            border-bottom: var(--line-2);
+          }
+        }
+      }
+    }
+  }
+}

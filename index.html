@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profile</title>
+    <link rel="stylesheet" href="./css/all.min.css" />
+    <link rel="stylesheet" href="./css/fontawesome.min.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <section class="profile__header">
+      <div class="profile__header__hamburger"></div>
+      <h1>Company Logo</h1>
+      <!-- <img src="" alt="" class="company__logo" /> -->
+      <img
+        src="./img/user1.png"
+        alt="User"
+        class="profile__header__profileImage"
+      />
+    </section>
+
+    <section class="vertical__nav">
+      <ul class="vertical__nav__list">
+        <li class="vertical__nav__list__item vertical__nav__list__dropdownItem">
+          Drop Down
+          <i class="fas fa-caret-down"></i>
+          <ul class="vertical__nav__list__dropdownItem__wrapper">
+            <li class="vertical__nav__list__dropdownItem__wrapper__item">
+              DropDownItem-1
+            </li>
+            <li class="vertical__nav__list__dropdownItem__wrapper__item">
+              DropDownItem-2
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="./js/index.js"></script>
+  </body>
+</html>
