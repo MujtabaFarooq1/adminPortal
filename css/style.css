@@ -71,14 +71,17 @@ h1 {
   min-height: 100vh;
   width: 20vw;
   min-width: 8rem;
-  background-color: var(--color-back-primary); }
+  background-color: var(--color-grey-dark-1); }
   .vertical__nav__list {
     list-style: none; }
     .vertical__nav__list__item, .vertical__nav__list__dropdownItem {
       color: var(--color-grey-light-1);
       font-size: 1.6rem;
       text-transform: uppercase;
+      position: relative;
       cursor: pointer; }
+      .vertical__nav__list__item:hover i, .vertical__nav__list__dropdownItem:hover i {
+        transform: rotate(360deg); }
       .vertical__nav__list__item__open i, .vertical__nav__list__dropdownItem__open i {
         transform: rotate(-90deg); }
       .vertical__nav__list__item i, .vertical__nav__list__dropdownItem i {
@@ -92,8 +95,24 @@ h1 {
         .vertical__nav__list__item__wrapper__item, .vertical__nav__list__dropdownItem__wrapper__item {
           font-size: 1.5rem;
           padding: 0.5rem 0;
-          transition: padding 0.3s, background-color 0.3s; }
+          transition: padding 0.3s, background-color 0.3s;
+          position: relative; }
           .vertical__nav__list__item__wrapper__item:hover, .vertical__nav__list__dropdownItem__wrapper__item:hover {
             padding-left: 1rem; }
-          .vertical__nav__list__item__wrapper__item:not(:last-child), .vertical__nav__list__dropdownItem__wrapper__item:not(:last-child) {
-            border-bottom: var(--line-2); }
+          .vertical__nav__list__item__wrapper__item::before, .vertical__nav__list__dropdownItem__wrapper__item::before {
+            content: "";
+            position: absolute;
+            left: -1rem;
+            top: 0;
+            height: 100%;
+            width: 2.5px;
+            background-color: #ffffff46; }
+          .vertical__nav__list__item__wrapper__item:not(:last-child)::after, .vertical__nav__list__dropdownItem__wrapper__item:not(:last-child)::after {
+            content: "";
+            height: 1px;
+            width: 60%;
+            background-color: #ffffff46;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transform: translateX(6%); }

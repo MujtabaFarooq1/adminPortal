@@ -26,7 +26,7 @@
   min-height: 100vh;
   width: 20vw;
   min-width: 8rem;
-  background-color: var(--color-back-primary);
+  background-color: var(--color-grey-dark-1);
 
   &__list {
     list-style: none;
@@ -36,9 +36,17 @@
       color: var(--color-grey-light-1);
       font-size: 1.6rem;
       text-transform: uppercase;
+      position: relative;
       cursor: pointer;
-      &__open i {
-        transform: rotate(-90deg);
+
+      &:hover i {
+        transform: rotate(360deg);
+      }
+
+      &__open {
+        & i {
+          transform: rotate(-90deg);
+        }
       }
 
       & i {
@@ -57,11 +65,32 @@
           font-size: 1.5rem;
           padding: 0.5rem 0;
           transition: padding 0.3s, background-color 0.3s;
+          position: relative;
+
           &:hover {
             padding-left: 1rem;
           }
-          &:not(:last-child) {
-            border-bottom: var(--line-2);
+
+          &::before {
+            content: "";
+            position: absolute;
+            left: -1rem;
+            top: 0;
+            height: 100%;
+            width: 2.5px;
+            background-color: #ffffff46;
+          }
+
+          &:not(:last-child)::after {
+            // border-bottom: var(--line-2);
+            content: "";
+            height: 1px;
+            width: 60%;
+            background-color: #ffffff46;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            transform: translateX(6%);
           }
         }
       }
